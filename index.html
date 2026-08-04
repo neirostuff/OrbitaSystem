@@ -839,20 +839,52 @@
        Правый (685×404px): форма — 2 инпута + кнопка синяя 430×56px.
      Фон тёмный #252525.
      ========================================= -->
+<section class="contact-header">
+    <div class="container">
+        <h2 class="contact-header__title">МЫ СОЗДАЕМ САЙТЫ, ЧТОБЫ <span class="contact-header__hl">УВЕЛИЧИТЬ ПОТОК ЗАЯВОК НА 50%</span></h2>
+    </div>
+</section>
+
 <section class="contact bg-dark" id="contact">
     <div class="container">
         <div class="contact__grid">
             <div class="contact__left">
-                <h2 class="contact__h2">Оставьте заявку для консультации и обсуждения проекта</h2>
-                <p class="contact__sub">Вы для нас — Не просто цифры</p>
+                <h2 class="contact__h2">ОСТАВЬТЕ ЗАЯВКУ ДЛЯ<br>КОНСУЛЬТАЦИИ И ОБСУЖДЕНИЯ<br>ПРОЕКТА</h2>
+                <p class="contact__sub">ВЫ ДЛЯ НАС - НЕ ПРОСТО ЦИФРЫ</p>
+                <div class="contact__socials">
+                    <a href="https://t.me/maks_orbita" target="_blank" class="contact__social-btn" title="Max">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="max_grad_contact" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#29B6F6"/>
+                                    <stop offset="100%" stop-color="#9C27B0"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="22" cy="22" r="22" fill="url(#max_grad_contact)"/>
+                            <circle cx="22" cy="22" r="16" fill="white"/>
+                            <path d="M22 13C17 13 13 17 13 22C13 24 13.8 25.8 15.2 27.2L14 31L17.8 29.8C19.1 30.6 20.5 31 22 31C27 31 31 27 31 22C31 17 27 13 22 13Z" fill="#3949AB"/>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/orbitasystems" target="_blank" class="contact__social-btn" title="Telegram @orbitasystems">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="22" cy="22" r="22" fill="#29B6F6"/>
+                            <path d="M10 21l6 2.5 2.5 7 4.5-5 6 4.5 5-16-24 7z" fill="white"/>
+                            <path d="M16 23.5l2 7 2.5-4.5" fill="#B3E5FC"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="contact__right">
                 <form class="contact__form" id="contactForm">
-                    <label class="contact__label">Ваше имя</label>
-                    <input type="text" placeholder="Ваше имя" class="contact__input" required>
-                    <label class="contact__label">Ваш телефон</label>
-                    <input type="tel" placeholder="Ваш телефон" class="contact__input" required>
-                    <button type="submit" class="btn btn--card-blue contact__submit">Отправить</button>
+                    <div class="contact__form-group">
+                        <label class="contact__label">Ваше имя</label>
+                        <input type="text" placeholder="Ваше имя" class="contact__input" required>
+                    </div>
+                    <div class="contact__form-group">
+                        <label class="contact__label">Ваш телефон</label>
+                        <input type="tel" placeholder="Ваш телефон" class="contact__input" required>
+                    </div>
+                    <button type="submit" class="contact__submit">Отправить</button>
                 </form>
             </div>
         </div>
