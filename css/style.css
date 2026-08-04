@@ -619,8 +619,9 @@ img { display: block; max-width: 100%; object-fit: cover; }
 /* ============================================
    REVIEWS + FAQ  (тёмный фон)
    ============================================ */
-.rv-faq {
-    padding: 100px 0;
+.rv-section,
+.faq-section {
+    padding: 120px 0;
     color: var(--white);
 }
 
