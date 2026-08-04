@@ -1,9 +1,9 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Градиент для круга (планеты) -->
     <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4A90E2" />
-      <stop offset="100%" stop-color="#001F54" />
+      <stop offset="0%" stop-color="#4DB8FF" />
+      <stop offset="100%" stop-color="#1E3A8A" />
     </linearGradient>
     
     <!-- Градиент для орбиты -->
@@ -12,19 +12,25 @@
       <stop offset="50%" stop-color="#3B82F6" />
       <stop offset="100%" stop-color="#8B5CF6" />
     </linearGradient>
-
-    <!-- Эффект свечения -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.5" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
   </defs>
 
-  <g transform="translate(32, 32)">
-    <!-- Основной круг -->
-    <circle cx="0" cy="0" r="18" stroke="url(#circleGrad)" stroke-width="3.5" fill="none" filter="url(#glow)" />
+  <g transform="translate(256, 256)">
+    <!-- Имитация свечения (полностью векторная, без фильтров) -->
+    <!-- Свечение планеты -->
+    <circle cx="0" cy="0" r="150" stroke="url(#circleGrad)" stroke-width="56" fill="none" opacity="0.05" />
+    <circle cx="0" cy="0" r="150" stroke="url(#circleGrad)" stroke-width="40" fill="none" opacity="0.15" />
+    <circle cx="0" cy="0" r="150" stroke="url(#circleGrad)" stroke-width="24" fill="none" opacity="0.4" />
     
-    <!-- Кольцо орбиты -->
-    <ellipse cx="0" cy="0" rx="28" ry="10" transform="rotate(-30)" stroke="url(#orbitGrad)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)" />
+    <!-- Свечение орбиты -->
+    <ellipse cx="0" cy="0" rx="220" ry="80" transform="rotate(-30)" stroke="url(#orbitGrad)" stroke-width="50" fill="none" opacity="0.05" stroke-linecap="round" />
+    <ellipse cx="0" cy="0" rx="220" ry="80" transform="rotate(-30)" stroke="url(#orbitGrad)" stroke-width="36" fill="none" opacity="0.15" stroke-linecap="round" />
+    <ellipse cx="0" cy="0" rx="220" ry="80" transform="rotate(-30)" stroke="url(#orbitGrad)" stroke-width="22" fill="none" opacity="0.4" stroke-linecap="round" />
+
+    <!-- Основные четкие линии -->
+    <!-- Планета -->
+    <circle cx="0" cy="0" r="150" stroke="url(#circleGrad)" stroke-width="12" fill="none" />
+    
+    <!-- Орбита -->
+    <ellipse cx="0" cy="0" rx="220" ry="80" transform="rotate(-30)" stroke="url(#orbitGrad)" stroke-width="12" fill="none" stroke-linecap="round" />
   </g>
 </svg>
