@@ -1004,66 +1004,86 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
    ============================================ */
 .footer { padding: 80px 0 40px; }
 
-.footer__inner {
+/* 6 Колонок */
+.footer__grid-6 {
     display: grid;
-    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr;
-    gap: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
     align-items: start;
-    margin-bottom: 50px;
-}
-
-.footer__logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    text-decoration: none;
-}
-.footer__logo .logo__name {
-    font-size: 22px !important;
-}
-.footer__copy { 
-    font-size: 13px; 
-    color: rgba(255,255,255,0.4); 
-    margin-top: 15px; 
-    line-height: 1.6; 
+    margin-bottom: 60px;
 }
 
 /* Колонка футера: заголовок + ссылки */
 .footer__col-title {
     font-family: var(--f-b);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--white);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-top: 0;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.footer__col-title--sm {
-    font-size: 14px;
-    margin-top: 35px;
-    margin-bottom: 15px;
-    color: rgba(255,255,255,0.7);
 }
 
 .footer__nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 .footer__nav a {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.3);
+    text-underline-offset: 4px;
+    transition: color 0.2s, text-decoration-color 0.2s;
 }
-.footer__nav a:hover { color: var(--white); }
+.footer__nav a:hover { 
+    color: var(--white); 
+    text-decoration-color: var(--white);
+}
 
-/* Разделитель (Figma y≈11826, 1px белый) */
+/* Средняя строка (Копирайт, Документы, Телефон) */
+.footer__mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer__copy { 
+    font-size: 12px; 
+    color: rgba(255,255,255,0.6);
+}
+.footer__docs {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.3);
+    text-underline-offset: 4px;
+}
+.footer__docs:hover {
+    color: var(--white);
+}
+.footer__contacts {
+    text-align: right;
+}
+.footer__phone {
+    font-size: 22px;
+    font-family: var(--f-b);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+.footer__time {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Разделитель */
 .footer__divider {
     border: none;
-    border-top: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.2);
     margin: 0 0 30px;
 }
 
@@ -1071,32 +1091,38 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
 .footer__bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
-    padding-top: 15px;
+}
+
+.footer__activities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.footer__activity {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer__activity .arrow {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
 }
 
 .footer__legal p,
 .footer__bank p {
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 6px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
     line-height: 1.4;
 }
 .footer__bank {
     text-align: right;
-}
-
-/* Документы */
-.footer__docs {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    text-decoration: underline;
-    text-align: center;
-}
-.footer__docs:hover {
-    color: var(--white);
 }
 
 /* Burger Button */

@@ -786,20 +786,12 @@
      ========================================= -->
 <footer class="footer bg-dark">
     <div class="container">
-        <div class="footer__inner">
-
-            <!-- Колонка 1: Лого + копирайт -->
-            <div class="footer__left">
-                <a href="#" class="logo footer__logo">
-                    <img src="logo.svg" alt="Orbita System" class="logo__icon" style="width: 42px; height: auto;">
-                    <span class="logo__name premium-logo-text">Orbita <span class="logo__accent">System</span></span>
-                </a>
-                <p class="footer__copy">© 2026, все права защищены</p>
-            </div>
-
-            <!-- Колонка 2: «Интересное» (Bebas 32px) + 6 ссылок (Roboto 18px underline) -->
+        
+        <!-- 6 Колонок ссылок -->
+        <div class="footer__grid-6">
+            <!-- Колонка 1: Интересное -->
             <div class="footer__col">
-                <div class="footer__col-title">Интересное</div>
+                <div class="footer__col-title">ИНТЕРЕСНОЕ</div>
                 <nav class="footer__nav">
                     <a href="#services">Услуги</a>
                     <a href="#contact">Контакты</a>
@@ -809,10 +801,10 @@
                     <a href="#blog">Журнал</a>
                 </nav>
             </div>
-
-            <!-- Колонка 3: Разработка + Дизайн -->
+            
+            <!-- Колонка 2: Разработка -->
             <div class="footer__col">
-                <div class="footer__col-title">Разработка</div>
+                <div class="footer__col-title">РАЗРАБОТКА</div>
                 <nav class="footer__nav">
                     <a href="#services">Лендинги</a>
                     <a href="#services">Сайты-визитки</a>
@@ -820,7 +812,11 @@
                     <a href="#services">Кастомные сайты</a>
                     <a href="#services">CRM системы</a>
                 </nav>
-                <div class="footer__col-title footer__col-title--sm">Дизайн</div>
+            </div>
+            
+            <!-- Колонка 3: Дизайн -->
+            <div class="footer__col">
+                <div class="footer__col-title">ДИЗАЙН</div>
                 <nav class="footer__nav">
                     <a href="#services">Веб дизайн</a>
                     <a href="#services">Бренд дизайн</a>
@@ -829,41 +825,63 @@
                     <a href="#services">Дизайн Вконтакте</a>
                 </nav>
             </div>
-
-            <!-- Колонка 4: Продвижение + Реклама + Мобильная -->
+            
+            <!-- Колонка 4: Продвижение -->
             <div class="footer__col">
-                <div class="footer__col-title">Продвижение</div>
+                <div class="footer__col-title">ПРОДВИЖЕНИЕ</div>
                 <nav class="footer__nav">
                     <a href="#services">SEO продвижение</a>
                     <a href="#services">SEO аудиты</a>
                     <a href="#services">GEO продвижение</a>
                     <a href="#services">Продвижение в ВК</a>
                 </nav>
-                <div class="footer__col-title footer__col-title--sm">Реклама</div>
+            </div>
+            
+            <!-- Колонка 5: Реклама -->
+            <div class="footer__col">
+                <div class="footer__col-title">РЕКЛАМА</div>
                 <nav class="footer__nav">
-                    <a href="#services">Яндекс Директ</a>
+                    <a href="#services">Реклама Яндекс Директ</a>
                     <a href="#services">Реклама Вконтакте</a>
                 </nav>
-                <div class="footer__col-title footer__col-title--sm">Мобильная разработка</div>
+            </div>
+
+            <!-- Колонка 6: Мобильная разработка -->
+            <div class="footer__col">
+                <div class="footer__col-title">МОБИЛЬНАЯ РАЗРАБОТКА</div>
                 <nav class="footer__nav">
                     <a href="#services">Приложения под android</a>
                     <a href="#services">Приложения под ios</a>
                 </nav>
             </div>
-
         </div>
 
-        <!-- Разделитель (Figma: линия 1px белая, y≈11826) -->
+        <!-- Средняя строка (Копирайт, Документы, Телефон) -->
+        <div class="footer__mid">
+            <div class="footer__copy">© 2026, все права защищены</div>
+            <a href="#" class="footer__docs">Документы</a>
+            <div class="footer__contacts">
+                <div class="footer__phone">+7 (999) 999 99-99</div>
+                <div class="footer__time">Пн-Вс 8:00 - 21:00</div>
+            </div>
+        </div>
+
+        <!-- Разделитель -->
         <hr class="footer__divider">
 
-        <!-- Нижняя строка: ИП | Документы | Реквизиты -->
+        <!-- Нижняя строка: Виды деятельности | ИП | Реквизиты -->
         <div class="footer__bottom">
+            <div class="footer__activities">
+                <div class="footer__activity">Основной вид деятельности <span class="arrow">v</span></div>
+                <div class="footer__activity">Дополнительные виды деятельности <span class="arrow">v</span></div>
+            </div>
+            
             <div class="footer__legal">
                 <p>ИП: Фролов Фёдор Федорович</p>
                 <p>ИНН: 502201934093</p>
                 <p>ОГРНИП: 326508100041079</p>
             </div>
-            <a href="#" class="footer__docs">Документы</a>
+            
             <div class="footer__bank">
                 <p>Расч. счёт: 40802810140070032629</p>
                 <p>Корр. счёт: 30101810400000000225</p>
