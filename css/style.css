@@ -163,14 +163,14 @@ img { display: block; max-width: 100%; object-fit: cover; }
     background-clip: text;
 }
 .premium-logo-text {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Playfair Display', serif !important;
     font-weight: 400 !important;
-    font-size: 26px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase;
+    font-size: 28px !important;
+    letter-spacing: 0.02em !important;
 }
 .premium-logo-text .logo__accent {
-    font-weight: 700;
+    font-weight: 600;
+    font-style: italic;
 }
 
 /* Правый блок хедера */
