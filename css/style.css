@@ -976,99 +976,78 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
     padding: 100px 0;
 }
 
-.team__tagline {
+.team__title {
     font-family: var(--f-h);
-    font-size: 32px;
-    color: var(--blue);
+    font-size: 40px;
+    color: var(--white);
     text-align: center;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
-.team__h2 {
-    font-family: var(--f-h);
-    font-size: 48px;
-    color: var(--white);
-    text-align: center;
-    margin-bottom: 15px;
-}
-.team__h3 {
-    font-family: var(--f-h);
-    font-size: 32px;
-    color: var(--white);
-    text-align: center;
-    margin-bottom: 15px;
-}
-.team__desc-center {
+.team__subtitle {
     font-family: var(--f-h);
     font-size: 28px;
-    color: var(--blue);
+    color: var(--accent);
     text-align: center;
-    max-width: 815px;
-    margin: 0 auto 60px;
-    line-height: 1.2;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    line-height: 1.3;
 }
 
 .team__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 40px 30px;
 }
 
 .tm {
-    background: #1A1A1A;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 15px;
-    padding: 0 0 20px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
-/* Figma: фото-пласть #D9D9D9, 270×190px (fill_fef61db7) */
 .tm__photo {
     width: 100%;
-    height: 190px;
-    background: linear-gradient(135deg, #1e222b 0%, #252a34 100%);
-    border-radius: 8px;
-    flex-shrink: 0;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 350px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 .tm__name {
     font-family: var(--f-h);
     font-size: 28px;
     color: var(--white);
-    margin: 0 20px 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 .tm__stack {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.6);
-    margin: 0 20px 10px;
-    line-height: 1.3;
+    font-family: var(--f-b);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
 }
 .tm__desc {
+    font-family: var(--f-b);
     font-size: 13px;
     line-height: 1.5;
     color: rgba(255,255,255,0.7);
-    margin: 0 20px 15px;
+    margin-bottom: 30px;
     flex: 1;
 }
-.tm__hl { color: var(--blue); }
-/* Figma: кнопка «Связяться» — жёлтая #e0e7b822 в Figma × fill_e0e7b822, 312×48px */
+.tm__hl { color: var(--accent); }
 .tm__btn {
-    background: #E8C84A;
+    background: var(--accent);
     color: var(--dark);
     font-size: 16px;
     font-weight: 600;
-    border-radius: 15px;
-    padding: 10px 0;
-    margin: 0 20px;
-    width: calc(100% - 40px);
+    border-radius: 10px;
+    padding: 15px 0;
+    width: 100%;
     text-align: center;
-    transition: background 0.2s;
+    transition: filter 0.2s;
+    border: none;
+    cursor: pointer;
 }
-.tm__btn:hover { background: #d4b238; }
+.tm__btn:hover { filter: brightness(1.1); }
 
 /* ============================================
    CONTACT FORM
