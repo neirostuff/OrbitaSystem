@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студия полного цикла</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@600&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- =========================================
+     HEADER
+     Figma: логотип слева,
+     навигация по центру (с адаптивным гамбургер-меню для мобильных),
+     контакт (телефон + мессенджеры) и кнопка «Пора действовать!» справа.
+     ========================================= -->
+<header class="header">
+    <div class="container header__inner">
+
+        <!-- Логотип: SVG орбита + текст Orbita Systems -->
+        <a href="#" class="logo">
+            <svg class="logo__icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="21" cy="21" r="20" stroke="url(#orb_grad)" stroke-width="2.5" fill="none"/>
+                <ellipse cx="21" cy="21" rx="20" ry="8" stroke="url(#orb_grad2)" stroke-width="2" fill="none" transform="rotate(-30 21 21)"/>
+                <circle cx="21" cy="21" r="4" fill="url(#orb_planet)"/>
+                <circle cx="33" cy="13" r="2.5" fill="#5EACCD"/>
+                <defs>
+                    <linearGradient id="orb_grad" x1="1" y1="21" x2="41" y2="21" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#5EACCD"/>
+                        <stop offset="100%" stop-color="#7C4DFF"/>
+                    </linearGradient>
+                    <linearGradient id="orb_grad2" x1="1" y1="21" x2="41" y2="21" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#7C4DFF" stop-opacity="0.7"/>
+                        <stop offset="100%" stop-color="#5EACCD" stop-opacity="0.7"/>
+                    </linearGradient>
+                    <radialGradient id="orb_planet" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#FFFFFF"/>
+                        <stop offset="100%" stop-color="#5EACCD"/>
+                    </radialGradient>
+                </defs>
+            </svg>
+            <span class="logo__name">Orbita <span class="logo__accent">Systems</span></span>
+        </a>
+
+        <!-- Навигация -->
+        <nav class="nav" id="mainNav">
+            <ul class="nav__list">
+                <li><a href="#cases" class="nav__link">Кейсы <span class="arr">▾</span></a></li>
+                <li><a href="#services" class="nav__link">Услуги <span class="arr">▾</span></a></li>
+                <li><a href="#about" class="nav__link">О студии</a></li>
+                <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                <li><a href="#blog" class="nav__link">Журнал</a></li>
+                <li><a href="#contact" class="nav__link">Обсудить проект</a></li>
+            </ul>
+        </nav>
+
+        <!-- Правый блок: иконки + телефон + CTA + гамбургер -->
+        <div class="header__right">
+            <!-- Max Profile -->
+            <a href="https://t.me/maks_orbita" target="_blank" class="header__icon-link" title="Max">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="max_grad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#29B6F6"/>
+                            <stop offset="100%" stop-color="#9C27B0"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="22" cy="22" r="22" fill="url(#max_grad)"/>
+                    <circle cx="22" cy="22" r="16" fill="white"/>
+                    <path d="M22 13C17 13 13 17 13 22C13 24 13.8 25.8 15.2 27.2L14 31L17.8 29.8C19.1 30.6 20.5 31 22 31C27 31 31 27 31 22C31 17 27 13 22 13Z" fill="#3949AB"/>
+                </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me/orbitasystems" target="_blank" class="header__icon-link" title="Telegram @orbitasystems">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="22" fill="#29B6F6"/>
+                    <path d="M10 21l6 2.5 2.5 7 4.5-5 6 4.5 5-16-24 7z" fill="white"/>
+                    <path d="M16 23.5l2 7 2.5-4.5" fill="#B3E5FC"/>
+                </svg>
+            </a>
+            <!-- Телефон и режим работы -->
+            <div class="header__contact-wrap">
+                <span class="header__work-hours">Пн-Вс 8:00 - 21:00</span>
+                <a href="tel:+79175505338" class="header__phone">8 (917) 550-53-38</a>
+            </div>
+            <!-- CTA кнопка -->
+            <a href="#contact" class="btn btn--cta header__cta">Обсудить проект</a>
+            <!-- Гамбургер для мобильных -->
+            <button class="header__burger" id="burgerBtn" aria-label="Переключить меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<!-- =========================================
+     HERO
+     Figma: высота 798px, фоновое фото (растянуто),
+     подпись «Студия проектов», заголовок H1,
+     описание (Open Sans SemiBold 20px, max-width 709px),
+     две кнопки: «Кейсы» (outline) и «Обсудить проект» (gradient).
+     ========================================= -->
+<section class="hero">
+    <div class="hero__bg"><img src="assets/images/hero_img.png" alt="Фон"></div>
+    <div class="container hero__content">
+        <div class="hero__label">Студия проектов</div>
+        <h1 class="hero__title">
+            Создаем сайты, которые приносят
+            <span class="hero__hl">реальных клиентов</span>
+        </h1>
+        <p class="hero__desc">
+            Быстро, качественно, с результатом. Работаем так, чтобы потом
+            гордиться сайтом, который сделали. Запускам сайты с 0 и
+            контроллируем весь процесс: от разработки до привлечения клиентов
+        </p>
+        <div class="hero__actions">
+            <a href="#cases"   class="btn btn--outline">Кейсы</a>
+            <a href="#contact" class="btn btn--grad">Обсудить проект</a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     BANNER
+     Figma: «Студия полного цикла: от идеи до потока заявок»
+     Bebas Neue 48px, чёрный, по центру, белый фон.
+     ========================================= -->
+<section class="banner">
+    <div class="container">
+        <h2 class="banner__text">Студия полного цикла: от идеи до потока заявок</h2>
+    </div>
+</section>
+
+<!-- =========================================
+     SERVICES (9 карточек, 3 колонки)
+     Figma: карточки 433×438px, gap ~50px, border-radius 30px, shadow.
+     Ряд 1: Сайты (белая кнопка) | Интернет-магазины (синяя) | Реклама (синяя «Подключить рекламу»)
+     Ряд 2: CRM (белая «Обсудить проект») | SEO (синяя) | Поддерка и аудиты (синяя «Заказать аудит»)
+     Ряд 3: Разработка приложений (белая) | Дизайн (синяя) | Рассчитать стоимость (синяя, светлый фон)
+     ========================================= -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="services__grid">
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--1"></div>
+                <h3 class="scard__title">Сайты и лендинги</h3>
+                <p class="scard__desc">Качественные сайты с продающей структурой и продвижением. Первая заявка уже через неделю после запуска</p>
+                <span class="scard__price">ОТ 25 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать сайт</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--2"></div>
+                <h3 class="scard__title">Интернет-магазины</h3>
+                <p class="scard__desc">Разарабатываем интернет-магазины под ключ, чтобы у вашего бизнеса продажи через интернет увеличились в разы</p>
+                <span class="scard__price">ОТ 45 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать магазин</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--3"></div>
+                <h3 class="scard__title">Реклама</h3>
+                <p class="scard__desc">Запускаем таргетированную и контекстную рекламу, которая окупится минимум в 2 раза и принесет заявки</p>
+                <span class="scard__price">ОТ 35 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Подключить рекламу</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--4"></div>
+                <h3 class="scard__title">CRM и чат боты</h3>
+                <p class="scard__desc">Когда поток заявок налажен, нужно освободить сотрудников от рутины. Разрабатываем CRM и чат боты для автоматизации вашего бизнеса.</p>
+                <span class="scard__price">ОТ 50 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Обсудить проект</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--5"></div>
+                <h3 class="scard__title">SEO продвижение</h3>
+                <p class="scard__desc">Комплексно продвигаем ваш сайт, анализируем конкурентов и развиваем SEO ядро, чтобы ваш бизнес был в ТОПе поиска</p>
+                <span class="scard__price">ОТ 25 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать SEO</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--6"></div>
+                <h3 class="scard__title">Поддержка и аудиты</h3>
+                <p class="scard__desc">Отслеживаем работоспособность сайта 24/7, делаем аудиты контента и полностью отвечаем за прибыль с сайта</p>
+                <span class="scard__price">ОТ 45 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать аудит</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--7"></div>
+                <h3 class="scard__title">Разработка приложений</h3>
+                <p class="scard__desc">Разрабатываем приложения под ios и android любой сложности так, чтобы пользователи заходили в них ежедневно</p>
+                <span class="scard__price">ОТ 50 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать приложение</a>
+            </article>
+
+            <article class="scard">
+                <div class="scard__icon scard__icon--8"></div>
+                <h3 class="scard__title">Дизайн</h3>
+                <p class="scard__desc">Разрабатываем креативный дизайн сайта, который поможет выделиться на фоне конкурентов, а так же принесет прибыль и заявки</p>
+                <span class="scard__price">ОТ 35 000 р</span>
+                <a href="#contact" class="btn btn--card-blue">Заказать дизайн</a>
+            </article>
+
+            <article class="scard scard--light">
+                <div class="scard__icon scard__icon--9"></div>
+                <h3 class="scard__title">Рассчитать стоимость</h3>
+                <p class="scard__desc">Рассчитайте стоимость создания сайта, или закажите профессиональный аудит текущего сайта для поиска точек роста</p>
+                <span class="scard__price">Бесплатно</span>
+                <a href="#contact" class="btn btn--card-blue">Рассчитать стоимость</a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     CASES (кейсы)
+     Figma: тёмный фон (#252525).
+     Заголовок «Кейсы» (Bebas 48px белый), y≈2762.
+     Подзаголовок синий: «Разработали и продвинули 100 + сайтов, убедитесь в этом!»
+     Сетка 3×3: изображения мокапов + тёмные ячейки с текстом «интернет магазин для {название компании}».
+     Кнопка: синий круг + текст «Показать еще 10 кейсов» (Figma y≈4275, x≈1343).
+     Скрытая сетка ещё 9 кейсов (раскрывается по клику).
+     ========================================= -->
+<section class="cases" id="cases">
+    <div class="container">
+        <h2 class="cases__title">Кейсы</h2>
+        <p class="cases__sub">Разработали и продвинули 100 + сайтов, убедитесь в этом!</p>
+    </div>
+
+    <!-- Сетка кейсов 3×3: 8 ячеек с реальными фото из Figma + overlay, 9-я = кнопка -->
+    <!-- Figma: 9 ячеек 567×567px каждая, imageRef из fill_4567013c, EL-7bb78958 и др. -->
+    <div class="cases__grid" id="casesGrid">
+
+        <div class="case-cell">
+            <img src="assets/images/case_1.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_2.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_3.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_4.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_5.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_6.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_7.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <div class="case-cell">
+            <img src="assets/images/case_8.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+
+        <!-- 9-я ячейка: кнопка «Показать ещё» (Figma: синий эллипс 150×150, текст ниже) -->
+        <div class="case-cell case-cell--more" id="casesMoreBtn">
+            <div class="cases__more-circle">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="30" fill="#0070D1"/>
+                    <path d="M30 15V45M15 30H45" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="cases__more-text">Показать еще 10 кейсов</span>
+        </div>
+
+    </div>
+
+    <!-- Скрытые кейсы (показываются по клику) - используем те же 8 изображений в другом порядке -->
+    <div class="cases__grid cases__extra" id="casesExtra">
+        <div class="case-cell">
+            <img src="assets/images/case_5.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_7.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>{НАЗВАНИЕ КОМПАНИИ}</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_3.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_1.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_8.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_2.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_6.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_4.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+        <div class="case-cell">
+            <img src="assets/images/case_1.png" alt="интернет магазин для {название компании}" loading="lazy">
+            <div class="case-cell__overlay">ИНТЕРНЕТ МАГАЗИН ДЛЯ<br>ВАШЕГО БИЗНЕСА</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     WORKFLOW (Как мы работаем?)
+     Figma: белый фон, заголовок «Как мы работаем?» (Bebas 48px чёрный).
+     Левая часть: пунктирная вертикальная линия, 4 шага:
+       — квадратные синие боксы (#0070D1) с цифрой 1–4 (Bebas 48px белый)
+       — метка: Заявка / Предоплата / Получаете готовый сайт / Продвижение (Bebas 32px чёрный)
+       — описание (Roboto 16px серый)
+     Правая часть: кнопка «Обсудить проект» (gradient).
+     ========================================= -->
+<section class="workflow" id="workflow">
+    <div class="container">
+        <h2 class="wf__title">Как мы работаем?</h2>
+        <div class="wf__layout">
+            <div class="wf__timeline-wrap">
+                <!-- Вертикальная линия -->
+                <div class="wf__line"></div>
+                <ol class="wf__timeline">
+                    <li class="wf__step">
+                        <div class="wf__num-wrap"><div class="wf__num">1</div></div>
+                        <div class="wf__step-body">
+                            <div class="wf__label">Заявка</div>
+                            <p class="wf__desc">Вы оставляете заявку, с вами связывается менеджер и вы рассказываете, какую задачу нужно сделать. Получаете поддержку по вопросам проекта 24/7</p>
+                        </div>
+                    </li>
+                    <li class="wf__step">
+                        <div class="wf__num-wrap"><div class="wf__num">2</div></div>
+                        <div class="wf__step-body">
+                            <div class="wf__label">Предоплата</div>
+                            <p class="wf__desc">До начала работы необходимо внести предоплату 50%. Это позволит забронировать время и приступить к выполнению проекта</p>
+                        </div>
+                    </li>
+                    <li class="wf__step">
+                        <div class="wf__num-wrap"><div class="wf__num">3</div></div>
+                        <div class="wf__step-body">
+                            <div class="wf__label">Получаете готовый сайт</div>
+                            <p class="wf__desc">Ваш проект будет готов на 2 недели раньше срока. Получите полностью настроенный сайт и приступите к работе без задержек</p>
+                        </div>
+                    </li>
+                    <li class="wf__step">
+                        <div class="wf__num-wrap"><div class="wf__num">4</div></div>
+                        <div class="wf__step-body">
+                            <div class="wf__label">Продвижение</div>
+                            <p class="wf__desc">Специалисты занимаются SEO-продвижением и настройкой рекламы, чтобы ваши вложения окупились как можно быстрее</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Правая часть: 4 стат-карточки + кнопка -->
+            <div class="wf__right">
+                <div class="wf__stats">
+                    <div class="stat stat--dark">
+                        <div class="stat__num stat__num--accent">50%</div>
+                        <p class="stat__desc">Увеличивается доход бизнеса после разработки сайта</p>
+                    </div>
+                    <div class="stat stat--white">
+                        <div class="stat__num stat__num--blue">100%</div>
+                        <p class="stat__desc stat__desc--dark">Окупаемость проекта за счет комплексного подхода к разработке</p>
+                    </div>
+                    <div class="stat stat--white">
+                        <div class="stat__num stat__num--blue">100+</div>
+                        <p class="stat__desc stat__desc--dark">Успешно реализованных проектов в сфере веб-разработки</p>
+                    </div>
+                    <div class="stat stat--dark">
+                        <div class="stat__num stat__num--accent">2 недели</div>
+                        <p class="stat__desc">Оптимальный срок с момента продвижения до первой заявки с сайта</p>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn--grad wf__cta-btn">Обсудить проект</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     REVIEWS + FAQ  (тёмный фон #252525)
+     ——— REVIEWS ———
+     Figma y≈5797–6599:
+       Заголовок «ОТЗЫВЫ КЛИЕНТОВ» (Bebas 48px белый, y≈5897)
+       Субтитл синий: «Собрали все отзывы клиентов, которые обратились в нашу студию» (y≈5977)
+       Субтитл тёмный: «Любой большой проект начинается с маленького шага» (Bebas 48px чёрный/синий y≈6749)
+       3 карточки: белые, 450×286px, внутри аватар-эллипс, имя, компания, SVG звёзды, текст, «Читать больше», «Смотреть сайт»
+       Кнопка «Все отзывы» (outline синяя, 250×56px)
+     ——— FAQ ———
+     Figma y≈7465–7930:
+       Заголовок «Частые вопросы заказчиков» (Bebas 48px белый)
+       Две колонки:
+         Левая (x≈150): Сколько стоит создать сайт? / Что нужно от меня? / На чем делаете сайты?
+         Правая (x≈874): Гарантируете ли попадание в ТОП? / Какие сроки на разработку? / У меня уже есть сайт - стоит ли переделывать?
+       Между вопросами — горизонтальные белые линии (разделители).
+       Кнопки-круги справа у каждого вопроса (+/-).
+       Фото (image 179, 380×304, border-radius 15px) в левой части блока FAQ (x≈396, y≈6961).
+       Кнопка «Отправить» (синяя, 430×56px, y≈7209).
+       2 инпута: «Ваше имя», «Ваш телефон» (stroke #0069D3, border-radius 15px).
+       Субтитл синий: «поможем сделать из вашего бизнеса лидера индустрии!»
+     ========================================= -->
+<section class="rv-faq bg-dark" id="reviews">
+    <div class="container">
+
+        <!-- REVIEWS -->
+        <div class="rv">
+            <h2 class="rv__title">ОТЗЫВЫ КЛИЕНТОВ</h2>
+            <p class="rv__sub">Собрали все отзывы клиентов, которые обратились в нашу студию</p>
+
+
+            <div class="rv__grid">
+                <div class="rv-card">
+                    <div class="rv-card__top">
+                        <div class="rv-card__avatar"></div>
+                        <div>
+                            <div class="rv-card__name">Мария Смирнова</div>
+                            <div class="rv-card__company">Сеть салонов красоты</div>
+                        </div>
+                        <div class="rv-card__stars">★★★★★</div>
+                    </div>
+                    <p class="rv-card__text">Ребята из студии создали для нас сайт с нуля всего за месяц. Полностью погрузились в специфику нашего бренда одежды, настроили удобную корзину и адаптивную мобильную версию. Клиенты постоянно хвалят интерфейс, а конверсия в покупку...</p>
+                    <div class="rv-card__footer">
+                        <a href="#" class="rv-card__more">Читать больше</a>
+                        <a href="#" class="rv-card__link">Смотреть сайт →</a>
+                    </div>
+                </div>
+                <div class="rv-card">
+                    <div class="rv-card__top">
+                        <div class="rv-card__avatar"></div>
+                        <div>
+                            <div class="rv-card__name">Мария Смирнова</div>
+                            <div class="rv-card__company">Сеть салонов красоты</div>
+                        </div>
+                        <div class="rv-card__stars">★★★★★</div>
+                    </div>
+                    <p class="rv-card__text">Ребята из студии создали для нас сайт с нуля всего за месяц. Полностью погрузились в специфику нашего бренда одежды, настроили удобную корзину и адаптивную мобильную версию. Клиенты постоянно хвалят интерфейс, а конверсия в покупку...</p>
+                    <div class="rv-card__footer">
+                        <a href="#" class="rv-card__more">Читать больше</a>
+                        <a href="#" class="rv-card__link">Смотреть сайт →</a>
+                    </div>
+                </div>
+                <div class="rv-card">
+                    <div class="rv-card__top">
+                        <div class="rv-card__avatar"></div>
+                        <div>
+                            <div class="rv-card__name">Мария Смирнова</div>
+                            <div class="rv-card__company">Сеть салонов красоты</div>
+                        </div>
+                        <div class="rv-card__stars">★★★★★</div>
+                    </div>
+                    <p class="rv-card__text">Ребята из студии создали для нас сайт с нуля всего за месяц. Полностью погрузились в специфику нашего бренда одежды, настроили удобную корзину и адаптивную мобильную версию. Клиенты постоянно хвалят интерфейс, а конверсия в покупку...</p>
+                    <div class="rv-card__footer">
+                        <a href="#" class="rv-card__more">Читать больше</a>
+                        <a href="#" class="rv-card__link">Смотреть сайт →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rv__all-wrap">
+                <a href="#" class="btn btn--outline-acc">Все отзывы</a>
+            </div>
+        </div>
+
+        <!-- БЛОК ПЕРЕД FAQ -->
+        <div class="rv__step">
+            <h3 class="rv__step-heading">Любой большой проект начинается с маленького шага</h3>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq" id="faq">
+            <h2 class="faq__title">Частые вопросы заказчиков</h2>
+            <p class="faq__sub">поможем сделать из вашего бизнеса лидера индустрии!</p>
+
+            <div class="faq__layout">
+                <!-- Левое фото -->
+                <div class="faq__photo">
+                    <img src="assets/images/hero_img.png" alt="FAQ фото">
+                </div>
+
+                <!-- Правая часть: вопросы + мини-форма -->
+                <div class="faq__body">
+                    <!-- 2 колонки вопросов -->
+                    <div class="faq__cols">
+                        <div class="faq__col">
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    Сколько стоит создать сайт?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">Стоимость зависит от объёма и сложности. Оставьте заявку — рассчитаем бесплатно.</div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    Что нужно от меня?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">Заполнить бриф и предоставить материалы о компании.</div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    На чем делаете сайты?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">На современных фреймворках и CMS — под задачи клиента.</div>
+                            </details>
+                        </div>
+                        <div class="faq__col">
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    Гарантируете ли попадание в ТОП?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">Мы гарантируем выполнение SEO-работ и видимый прирост трафика.</div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    Какие сроки на разработку?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">Лендинг — от 7 дней. Полноценный сайт — 2–4 недели.</div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__q">
+                                    У меня уже есть сайт — стоит ли переделывать?
+                                    <div class="faq-item__btn"><span></span><span></span></div>
+                                </summary>
+                                <div class="faq-item__a">Закажите аудит — скажем, что мешает сайту приносить заявки.</div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Мини-форма из блока FAQ (Figma y≈6961–7209) -->
+                    <form class="faq__form" id="faqForm">
+                        <div class="faq__form-label">Ваше имя</div>
+                        <input type="text" placeholder="Ваше имя" class="faq__input" required>
+                        <div class="faq__form-label">Ваш телефон</div>
+                        <input type="tel" placeholder="Ваш телефон" class="faq__input" required>
+                        <button type="submit" class="btn btn--card-blue faq__submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================
+     БЕГУЩАЯ СТРОКА (Ticker/Marquee)
+     Figma y≈8330–8680: два синих прямоугольника (#0070D1, 1700×150px),
+     внутри текст «Балон бар» + звёзды, бегущие горизонтально.
+     ========================================= -->
+<div class="ticker-wrap">
+    <div class="ticker">
+        <div class="ticker__row ticker__row--1">
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <!-- дубль для бесшовной анимации -->
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+        </div>
+    </div>
+    <div class="ticker">
+        <div class="ticker__row ticker__row--2">
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+            <span>★</span><span>Балон бар</span>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================
+     TEAM (О студии)
+     Figma y≈8930–9850:
+       Tagline синий: «Крепкая команда поможет создать сайт, который уже сейчас нужен вашему бизнесу»
+       H2: «Уже 100+ предпринимателей стали лучшими среди конкурентов» (Bebas 48px чёрный)
+       H3: «Кто сделает ваш сайт лучшим?» (Bebas 32px белый)
+       Описание: «Благодаря слаженной работе мы разрабатываем качественные проекты...» (Bebas 32px синий, по центру)
+       Сетка 4 колонки, 2 ряда (8 карточек: серые #D9D9D9, border-radius 15px, 312×312px).
+       Каждая карточка: аватар-эллипс, имя «Имя ФАМИЛИЯ» (Bebas 32px белый), стек (SemiBold 16px белый), описание.
+     ========================================= -->
+<!-- =========================================
+     TEAM (О студии)
+     Figma y≈8930–9850: тёмный фон #252525.
+     Tagline синий по центру. H2 белый Bebas 48px. H3 белый Bebas 32px.
+     Описание Bebas 32px синий по центру.
+     4 колонки × 2 ряда = 8 карточек (#252525 бордер, 312×312px, border-radius 15px).
+     Каждая: фото (#D9D9D9, 270×277px), имя Bebas 32px, стек SemiBold 16px, описание 14px, кнопка жёлтая.
+     ========================================= -->
+<section class="team" id="about">
+    <div class="container">
+        <p class="team__tagline">Крепкая команда поможет создать сайт, который уже сейчас нужен вашему бизнесу</p>
+        <h2 class="team__h2">Уже 100+ предпринимателей стали лучшими среди конкурентов</h2>
+        <h3 class="team__h3">Кто сделает ваш сайт лучшим?</h3>
+        <p class="team__desc-center">Благодаря слаженной работе мы разрабатываем качественные проекты, которые сразу после запуска приносят результат</p>
+
+        <div class="team__grid">
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Иван — опытный фронтенд-разработчик, который создает удобные и производительные интерфейсы. Его знания позволяют <span class="tm__hl">приносить результат</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Анна — дизайнер с 5-летним опытом. Создает интерфейсы, которые не только красиво выглядят, но и <span class="tm__hl">увеличивают конверсию</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Сергей — SEO-специалист. Выводит сайты в ТОП-10, привлекая целевой органический трафик и <span class="tm__hl">новые заявки</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Ольга — следит за сроками и ресурсами, гарантируя, что ваш проект будет запущен <span class="tm__hl">вовремя</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Алексей — архитектура и безопасность баз данных, чтобы ваш сервис работал <span class="tm__hl">без сбоев</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Мария — пишет продающие тексты, которые цепляют с первых секунд и <span class="tm__hl">удерживают внимание</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Дмитрий — настраивает рекламу так, что каждый вложенный рубль <span class="tm__hl">окупается в разы</span></p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+            <div class="tm">
+                <div class="tm__photo"></div>
+                <div class="tm__name">Имя ФАМИЛИЯ</div>
+                <div class="tm__stack">JavaScript, React, Node.js, TypeScript</div>
+                <p class="tm__desc">Елена — тестирует на всех устройствах, чтобы баги <span class="tm__hl">не мешали</span> клиентам сделать заказ</p>
+                <a href="tel:+79175505338" class="btn tm__btn">Связяться</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     CONTACT (форма заявки)
+     Figma y≈10914–11300:
+       Левый (685×404px): заголовок Bebas 48px тёмный, субтитл синий Bebas 32px.
+       Правый (685×404px): форма — 2 инпута + кнопка синяя 430×56px.
+     Фон тёмный #252525.
+     ========================================= -->
+<section class="contact bg-dark" id="contact">
+    <div class="container">
+        <div class="contact__grid">
+            <div class="contact__left">
+                <h2 class="contact__h2">Оставьте заявку для консультации и обсуждения проекта</h2>
+                <p class="contact__sub">Вы для нас — Не просто цифры</p>
+            </div>
+            <div class="contact__right">
+                <form class="contact__form" id="contactForm">
+                    <label class="contact__label">Ваше имя</label>
+                    <input type="text" placeholder="Ваше имя" class="contact__input" required>
+                    <label class="contact__label">Ваш телефон</label>
+                    <input type="tel" placeholder="Ваш телефон" class="contact__input" required>
+                    <button type="submit" class="btn btn--card-blue contact__submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- =========================================
+     FOOTER
+     Figma y≈11482–12093: тёмный фон #252525.
+     Лого слева (имя + копирайт).
+     Колонки: «Интересное» (6 ссылок) | «Разработка» (5 ссылок) + «Дизайн» (5 ссылок) | «Продвижение» (4) + «Реклама» (2) + «Мобильная» (2).
+     Линия-разделитель 1px белая (y≈11826).
+     Нижняя строка: ИП / ИНН / ОГРНИП | Документы (link underline) | реквизиты.
+     ========================================= -->
+<footer class="footer bg-dark">
+    <div class="container">
+        <div class="footer__inner">
+
+            <!-- Колонка 1: Лого + копирайт -->
+            <div class="footer__left">
+                <a href="#" class="logo footer__logo">
+                    <svg class="logo__icon" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="21" cy="21" r="20" stroke="url(#f_orb)" stroke-width="2.5" fill="none"/>
+                        <ellipse cx="21" cy="21" rx="20" ry="8" stroke="url(#f_orb2)" stroke-width="2" fill="none" transform="rotate(-30 21 21)"/>
+                        <circle cx="21" cy="21" r="4" fill="url(#f_plan)"/>
+                        <circle cx="33" cy="13" r="2.5" fill="#5EACCD"/>
+                        <defs>
+                            <linearGradient id="f_orb" x1="1" y1="21" x2="41" y2="21" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#5EACCD"/><stop offset="100%" stop-color="#7C4DFF"/>
+                            </linearGradient>
+                            <linearGradient id="f_orb2" x1="1" y1="21" x2="41" y2="21" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#7C4DFF" stop-opacity="0.7"/><stop offset="100%" stop-color="#5EACCD" stop-opacity="0.7"/>
+                            </linearGradient>
+                            <radialGradient id="f_plan" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#5EACCD"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo__name">Orbita <span class="logo__accent">Systems</span></span>
+                </a>
+                <p class="footer__copy">© 2026, все права защищены</p>
+            </div>
+
+            <!-- Колонка 2: «Интересное» (Bebas 32px) + 6 ссылок (Roboto 18px underline) -->
+            <div class="footer__col">
+                <div class="footer__col-title">Интересное</div>
+                <nav class="footer__nav">
+                    <a href="#services">Услуги</a>
+                    <a href="#contact">Контакты</a>
+                    <a href="#cases">Кейсы</a>
+                    <a href="#about">О студии</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#blog">Журнал</a>
+                </nav>
+            </div>
+
+            <!-- Колонка 3: Разработка + Дизайн -->
+            <div class="footer__col">
+                <div class="footer__col-title">Разработка</div>
+                <nav class="footer__nav">
+                    <a href="#services">Лендинги</a>
+                    <a href="#services">Сайты-визитки</a>
+                    <a href="#services">Интернет-магазины</a>
+                    <a href="#services">Кастомные сайты</a>
+                    <a href="#services">CRM системы</a>
+                </nav>
+                <div class="footer__col-title footer__col-title--sm">Дизайн</div>
+                <nav class="footer__nav">
+                    <a href="#services">Веб дизайн</a>
+                    <a href="#services">Бренд дизайн</a>
+                    <a href="#services">Дизайн логотипов</a>
+                    <a href="#services">Дизайн баннеров</a>
+                    <a href="#services">Дизайн Вконтакте</a>
+                </nav>
+            </div>
+
+            <!-- Колонка 4: Продвижение + Реклама + Мобильная -->
+            <div class="footer__col">
+                <div class="footer__col-title">Продвижение</div>
+                <nav class="footer__nav">
+                    <a href="#services">SEO продвижение</a>
+                    <a href="#services">SEO аудиты</a>
+                    <a href="#services">GEO продвижение</a>
+                    <a href="#services">Продвижение в ВК</a>
+                </nav>
+                <div class="footer__col-title footer__col-title--sm">Реклама</div>
+                <nav class="footer__nav">
+                    <a href="#services">Яндекс Директ</a>
+                    <a href="#services">Реклама Вконтакте</a>
+                </nav>
+                <div class="footer__col-title footer__col-title--sm">Мобильная разработка</div>
+                <nav class="footer__nav">
+                    <a href="#services">Приложения под android</a>
+                    <a href="#services">Приложения под ios</a>
+                </nav>
+            </div>
+
+        </div>
+
+        <!-- Разделитель (Figma: линия 1px белая, y≈11826) -->
+        <hr class="footer__divider">
+
+        <!-- Нижняя строка: ИП | Документы | Реквизиты -->
+        <div class="footer__bottom">
+            <div class="footer__legal">
+                <p>ИП: Фролов Фёдор Федорович</p>
+                <p>ИНН: 502201934093</p>
+                <p>ОГРНИП: 326508100041079</p>
+            </div>
+            <a href="#" class="footer__docs">Документы</a>
+            <div class="footer__bank">
+                <p>Расч. счёт: 40802810140070032629</p>
+                <p>Корр. счёт: 30101810400000000225</p>
+                <p>БИК: 044525225</p>
+                <p>Банк: ПАО Сбербанк</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
