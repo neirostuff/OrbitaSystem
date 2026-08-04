@@ -748,17 +748,7 @@ img { display: block; max-width: 100%; object-fit: cover; }
 }
 
 .faq__layout {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-.faq__photo img {
-    width: 380px;
-    height: 304px;
-    border-radius: 15px;
-    object-fit: cover;
+    display: block;
 }
 
 .faq__body { display: flex; flex-direction: column; gap: 40px; }
@@ -812,29 +802,91 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
     line-height: 1.5;
 }
 
-/* Мини-форма FAQ */
-.faq__form {
+/* =========================================
+   PROJECT STEP 
+   ========================================= */
+.project-step {
+    background: var(--light, #FFFFFF);
+    padding: 80px 0;
+}
+.project-step__title {
+    font-family: var(--f-h);
+    font-size: 40px;
+    color: var(--dark);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.project-step__sub {
+    font-family: var(--f-h);
+    font-size: 24px;
+    color: var(--blue);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+.project-step__layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.project-step__photo img {
+    width: 380px;
+    height: 304px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.project-step__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 430px;
+}
+.project-step__form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.faq__form-label {
-    font-size: 18px;
+.project-step__label {
+    font-size: 14px;
     color: var(--dark);
 }
-.faq__input {
-    width: 430px;
-    height: 56px;
-    border: 2px solid var(--blue2);
-    border-radius: 15px;
-    background: transparent;
+.project-step__input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--blue2);
+    border-radius: 10px;
     padding: 0 20px;
     font-family: var(--f-b);
-    font-size: 18px;
-    color: var(--white);
+    font-size: 15px;
+    color: var(--dark);
+    outline: none;
+    transition: box-shadow 0.3s;
 }
-.faq__input::placeholder { color: rgba(255,255,255,0.4); }
-.faq__submit { width: 430px; margin-top: 10px; }
+.project-step__input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 105, 211, 0.2);
+}
+.project-step__input::placeholder {
+    color: rgba(0,0,0,0.4);
+}
+.project-step__submit {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background: var(--blue2);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.project-step__submit:hover {
+    background: var(--blue);
+}
 
 /* ============================================
    БЕГУЩАЯ СТРОКА (два синих блока)

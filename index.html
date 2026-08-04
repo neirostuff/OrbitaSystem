@@ -512,7 +512,7 @@
        2 инпута: «Ваше имя», «Ваш телефон» (stroke #0069D3, border-radius 15px).
        Субтитл синий: «поможем сделать из вашего бизнеса лидера индустрии!»
      ========================================= -->
-<section class="rv-faq bg-dark" id="reviews">
+<section class="rv-section bg-dark" id="reviews">
     <div class="container">
 
         <!-- REVIEWS -->
@@ -602,87 +602,96 @@
                 <a href="#" class="btn btn--outline-acc">Все отзывы</a>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- БЛОК ПЕРЕД FAQ -->
-        <div class="rv__step">
-            <h3 class="rv__step-heading">Любой большой проект начинается с маленького шага</h3>
-        </div>
+<!-- =========================================
+     PROJECT STEP (Светлый фон)
+     ========================================= -->
+<section class="project-step" id="project-step">
+    <div class="container">
+        <h2 class="project-step__title">ЛЮБОЙ БОЛЬШОЙ ПРОЕКТ НАЧИНАЕТСЯ С МАЛЕНЬКОГО ШАГА</h2>
+        <p class="project-step__sub">ПОМОЖЕМ СДЕЛАТЬ ИЗ ВАШЕГО БИЗНЕСА ЛИДЕРА ИНДУСТРИИ!</p>
 
-        <!-- FAQ -->
-        <div class="faq" id="faq">
-            <h2 class="faq__title">Частые вопросы заказчиков</h2>
-            <p class="faq__sub">поможем сделать из вашего бизнеса лидера индустрии!</p>
-
-            <div class="faq__layout">
-                <!-- Левое фото -->
-                <div class="faq__photo">
-                    <img src="assets/images/hero_img.png" alt="FAQ фото">
+        <div class="project-step__layout">
+            <div class="project-step__photo">
+                <img src="assets/images/hero_img.png" alt="Процесс разработки">
+            </div>
+            
+            <form class="project-step__form" id="projectForm">
+                <div class="project-step__form-group">
+                    <label class="project-step__label">Ваше имя</label>
+                    <input type="text" placeholder="Ваше имя" class="project-step__input" required>
                 </div>
+                <div class="project-step__form-group">
+                    <label class="project-step__label">Ваш телефон</label>
+                    <input type="tel" placeholder="Ваш телефон" class="project-step__input" required>
+                </div>
+                <button type="submit" class="btn btn--solid-blue project-step__submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</section>
 
-                <!-- Правая часть: вопросы + мини-форма -->
-                <div class="faq__body">
-                    <!-- 2 колонки вопросов -->
-                    <div class="faq__cols">
-                        <div class="faq__col">
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    Сколько стоит создать сайт?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">Стоимость зависит от объёма и сложности. Оставьте заявку — рассчитаем бесплатно.</div>
-                            </details>
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    Что нужно от меня?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">Заполнить бриф и предоставить материалы о компании.</div>
-                            </details>
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    На чем делаете сайты?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">На современных фреймворках и CMS — под задачи клиента.</div>
-                            </details>
-                        </div>
-                        <div class="faq__col">
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    Гарантируете ли попадание в ТОП?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">Мы гарантируем выполнение SEO-работ и видимый прирост трафика.</div>
-                            </details>
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    Какие сроки на разработку?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">Лендинг — от 7 дней. Полноценный сайт — 2–4 недели.</div>
-                            </details>
-                            <details class="faq-item">
-                                <summary class="faq-item__q">
-                                    У меня уже есть сайт — стоит ли переделывать?
-                                    <div class="faq-item__btn"><span></span><span></span></div>
-                                </summary>
-                                <div class="faq-item__a">Закажите аудит — скажем, что мешает сайту приносить заявки.</div>
-                            </details>
-                        </div>
+<!-- =========================================
+     FAQ (Тёмный фон)
+     ========================================= -->
+<section class="faq-section bg-dark" id="faq">
+    <div class="container">
+        <h2 class="faq__title">Частые вопросы заказчиков</h2>
+
+        <div class="faq__layout">
+            <div class="faq__body">
+                <div class="faq__cols">
+                    <div class="faq__col">
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                Сколько стоит создать сайт?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">Стоимость зависит от объёма и сложности. Оставьте заявку — рассчитаем бесплатно.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                Что нужно от меня?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">Заполнить бриф и предоставить материалы о компании.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                На чем делаете сайты?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">На современных фреймворках и CMS — под задачи клиента.</div>
+                        </details>
                     </div>
-
-                    <!-- Мини-форма из блока FAQ (Figma y≈6961–7209) -->
-                    <form class="faq__form" id="faqForm">
-                        <div class="faq__form-label">Ваше имя</div>
-                        <input type="text" placeholder="Ваше имя" class="faq__input" required>
-                        <div class="faq__form-label">Ваш телефон</div>
-                        <input type="tel" placeholder="Ваш телефон" class="faq__input" required>
-                        <button type="submit" class="btn btn--card-blue faq__submit">Отправить</button>
-                    </form>
+                    <div class="faq__col">
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                Гарантируете ли попадание в ТОП?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">Мы гарантируем выполнение SEO-работ и видимый прирост трафика.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                Какие сроки на разработку?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">Лендинг — от 7 дней. Полноценный сайт — 2–4 недели.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-item__q">
+                                У меня уже есть сайт — стоит ли переделывать?
+                                <div class="faq-item__btn"><span></span><span></span></div>
+                            </summary>
+                            <div class="faq-item__a">Закажите аудит — скажем, что мешает сайту приносить заявки.</div>
+                        </details>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
