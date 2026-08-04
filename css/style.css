@@ -42,6 +42,23 @@ img { display: block; max-width: 100%; object-fit: cover; }
    ============================================ */
 .bg-dark { background: var(--dark); }
 
+.contact-header { padding: 80px 0; text-align: center; }
+.contact-header__title { font-family: var(--f-h); font-size: 48px; color: var(--dark); }
+.contact-header__hl { color: var(--accent); }
+
+.contact { padding: 100px 0; color: var(--white); }
+.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact__h2 { font-family: var(--f-h); font-size: 42px; margin-bottom: 20px; }
+.contact__sub { font-size: 18px; margin-bottom: 30px; opacity: 0.8; }
+.contact__socials { display: flex; gap: 20px; }
+.contact__social-btn { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: var(--accent); transition: transform 0.2s; }
+.contact__social-btn:hover { transform: translateY(-5px); }
+.contact__form-group { margin-bottom: 20px; }
+.contact__label { display: block; margin-bottom: 8px; font-weight: 500; }
+.contact__input { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #444; background: transparent; color: white; }
+.contact__submit { background: var(--accent); color: white; border: none; padding: 15px 40px; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: 600; width: 100%; transition: background 0.2s; }
+.contact__submit:hover { background: var(--accent-dk); }
+
 /* ============================================
    BUTTONS
    ============================================ */
@@ -737,12 +754,16 @@ img { display: block; max-width: 100%; object-fit: cover; }
 }
 
 /* --- FAQ --- */
-.faq { }
+.faq-section {
+    padding: 80px 0;
+}
 .faq__title {
     font-family: var(--f-h);
-    font-size: 48px;
+    font-size: 40px;
     color: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 80px;
+    text-align: center;
+    text-transform: uppercase;
 }
 .faq__sub {
     font-family: var(--f-h);
@@ -764,14 +785,14 @@ img { display: block; max-width: 100%; object-fit: cover; }
 }
 
 .faq-item {
-    border-bottom: 2px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.8);
 }
 .faq-item__q {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    font-size: 18px;
+    padding: 25px 0;
+    font-size: 15px;
     font-weight: 600;
     color: var(--white);
     cursor: pointer;
@@ -781,9 +802,9 @@ img { display: block; max-width: 100%; object-fit: cover; }
 .faq-item__q::-webkit-details-marker { display: none; }
 
 .faq-item__btn {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     background: var(--accent);
     border-radius: 50%;
     position: relative;
@@ -795,13 +816,13 @@ img { display: block; max-width: 100%; object-fit: cover; }
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
 }
-.faq-item__btn span:nth-child(1) { width: 23px; height: 2px; }
-.faq-item__btn span:nth-child(2) { width: 2px;  height: 23px; transition: transform 0.3s; }
+.faq-item__btn span:nth-child(1) { width: 14px; height: 1.5px; }
+.faq-item__btn span:nth-child(2) { width: 1.5px;  height: 14px; transition: transform 0.3s; }
 details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%) rotate(90deg); }
 
 .faq-item__a {
-    padding: 0 0 20px;
-    font-size: 15px;
+    padding: 0 0 25px;
+    font-size: 14px;
     color: rgba(255,255,255,0.75);
     line-height: 1.5;
 }
@@ -894,19 +915,31 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
 
 /* ============================================
    БЕГУЩАЯ СТРОКА (два синих блока)
-   Figma: два прямоугольника #0070D1 по 1700×150px,
-   внутри звёзды + «Балон бар» — бегут влево.
    ============================================ */
-.ticker-wrap { overflow: hidden; }
+.ticker-section {
+    background: var(--light, #FFFFFF);
+    padding: 100px 0 60px 0;
+}
+.ticker-section__title {
+    font-family: var(--f-h);
+    font-size: 44px;
+    color: var(--dark);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.ticker-wrap { overflow: hidden; margin-bottom: 0; }
 
 .ticker {
-    background: var(--blue);
-    height: 150px;
+    background: var(--blue2);
+    height: 90px;
     display: flex;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 15px;
 }
-.ticker + .ticker { margin-top: 0; }
+.ticker + .ticker { margin-bottom: 0; }
 
 .ticker__row {
     display: flex;
@@ -1042,6 +1075,21 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
    Figma y≈11084–11300: два белых прямоугольника 685×404px,
    border-radius 30px, на тёмном фоне.
    ============================================ */
+.contact-header {
+    background: #F8F8F8;
+    padding: 100px 0;
+    text-align: center;
+}
+.contact-header__title {
+    font-family: var(--f-h);
+    font-size: 56px;
+    color: var(--dark);
+    text-transform: uppercase;
+}
+.contact-header__hl {
+    color: var(--blue2);
+}
+
 .contact { padding: 100px 0; }
 
 .contact__grid {
@@ -1053,48 +1101,92 @@ details[open] .faq-item__btn span:nth-child(2) { transform: translate(-50%,-50%)
 .contact__left,
 .contact__right {
     background: var(--white);
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.contact__left {
+    justify-content: flex-start;
 }
 
 .contact__h2 {
-    font-family: var(--f-b);
-    font-weight: 700;
+    font-family: var(--f-h);
     font-size: 40px;
     color: var(--dark);
-    line-height: 1.2;
+    line-height: 1.1;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .contact__sub {
-    font-family: var(--f-b);
-    font-weight: 500;
+    font-family: var(--f-h);
     font-size: 24px;
-    color: var(--blue);
+    color: var(--blue2);
+    text-transform: uppercase;
+    margin-bottom: 40px;
 }
+
+.contact__socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.contact__social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s;
+}
+.contact__social-btn:hover { filter: brightness(1.1); }
+.contact__social-btn--viber { background: #7360F2; }
+.contact__social-btn--tg { background: #2AABEE; }
 
 .contact__form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+}
+.contact__form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 .contact__label {
-    font-size: 18px;
+    font-family: var(--f-b);
+    font-size: 14px;
+    font-weight: 600;
     color: var(--dark);
+    margin-bottom: 8px;
 }
 .contact__input {
     width: 100%;
     height: 56px;
-    border: 1px solid var(--blue);
-    border-radius: 8px;
+    border: 1px solid var(--blue2);
+    border-radius: 10px;
     background: transparent;
     padding: 0 20px;
     font-family: var(--f-b);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--dark);
-    margin-bottom: 10px;
 }
 .contact__input::placeholder { color: rgba(0,0,0,0.4); }
-.contact__submit { margin-top: 10px; }
+.contact__submit {
+    background: var(--blue2);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 18px 0;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+.contact__submit:hover { background: var(--blue); }
 
 /* ============================================
    FOOTER
