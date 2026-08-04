@@ -640,6 +640,38 @@ img { display: block; max-width: 100%; object-fit: cover; }
     letter-spacing: 0.07em;
 }
 
+.rv__slider-wrap {
+    position: relative;
+    width: 100%;
+}
+.rv__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.rv__arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+.rv__arrow svg {
+    width: 24px;
+    height: 24px;
+    color: var(--dark);
+}
+.rv__arrow--prev { left: -22px; }
+.rv__arrow--next { right: -22px; }
+
 .rv__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -668,10 +700,19 @@ img { display: block; max-width: 100%; object-fit: cover; }
     background: var(--card-placeholder);
     flex-shrink: 0;
 }
-.rv-card__name { font-weight: 600; font-size: 16px; color: var(--dark); }
-.rv-card__company { font-size: 14px; color: rgba(0,0,0,0.6); }
-.rv-card__stars { margin-left: auto; color: gold; font-size: 16px; }
-.rv-card__text { font-size: 14px; line-height: 1.5; color: #3D3D3D; flex-grow: 1; }
+.rv-card__name { font-weight: 600; font-size: 14px; color: var(--dark); }
+.rv-card__company { font-size: 12px; color: rgba(0,0,0,0.5); margin-top: 2px; }
+.rv-card__stars {
+    margin-left: auto;
+    display: flex;
+    gap: 2px;
+}
+.rv-card__stars svg {
+    width: 16px;
+    height: 16px;
+    fill: #FBC02D;
+}
+.rv-card__text { font-size: 13px; line-height: 1.5; color: #3D3D3D; flex-grow: 1; }
 .rv-card__footer {
     display: flex;
     justify-content: space-between;
@@ -679,8 +720,8 @@ img { display: block; max-width: 100%; object-fit: cover; }
     border-top: 1px solid rgba(0,0,0,0.1);
     padding-top: 12px;
 }
-.rv-card__more { font-size: 14px; color: rgba(0,0,0,0.5); text-decoration: underline; }
-.rv-card__link  { font-size: 14px; color: var(--blue2); text-decoration: underline; }
+.rv-card__more { font-size: 12px; color: rgba(0,0,0,0.4); text-decoration: none; }
+.rv-card__link  { font-size: 12px; color: var(--blue); text-decoration: none; }
 
 .rv__all-wrap { margin-top: 40px; }
 .rv__all-wrap .btn {
